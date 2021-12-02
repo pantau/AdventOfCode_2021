@@ -7,4 +7,4 @@ for ($i = 1; $i -lt $depths.Count; $i++) {
     }
 }
 
-Write-Host -Object "The depth increased $increased times."
+Write-Output -InputObject $increased
