@@ -9,4 +9,5 @@ This counts for script files and for misc ressource files like data input.
 
 ## Current progress
 **Day 01:** first and second - complete
+
 **Day 02:** first - complete
