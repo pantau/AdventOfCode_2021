@@ -9,13 +9,13 @@
     Specifies the path to the plain text input file.
 
     .INPUTS
-    None. You cannot pipe objects to 01_SonarEvaluator.ps1
+    None. You cannot pipe objects to 01_SonarSweep.ps1
 
     .OUTPUTS
     The solution is returned as [int]
 
     .EXAMPLE
-    PS> .\01_SonarEvaluator.ps1
+    PS> .\01_SonarSweep.ps1
 #>
 
 [CmdletBinding()]

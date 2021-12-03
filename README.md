@@ -12,4 +12,4 @@ This counts for script files and for misc ressource files like data input.
 
 **Day 02:** first and second - complete
 
-**Day 03:** first and second - WIP
+**Day 03:** first - complete

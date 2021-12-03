@@ -10,13 +10,13 @@
     Specifies the path to the plain text input file.
 
     .INPUTS
-    None. You cannot pipe objects to submarinePosition.ps1
+    None. You cannot pipe objects to 01_Dive.ps1
 
     .OUTPUTS
     The solution is returned as [int]
 
     .EXAMPLE
-    PS> .\submarinePosition.ps1
+    PS> .\01_Dive.ps1
 #>
 
 [CmdletBinding()]
