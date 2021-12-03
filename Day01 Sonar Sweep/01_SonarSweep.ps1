@@ -20,7 +20,7 @@
 
 [CmdletBinding()]
 param (
-    [Parameter()] [System.IO.FileInfo] $payloadFilePath = "01_SonarSweep.txt"
+    [Parameter()] [System.IO.FileInfo] $payloadFilePath = "./01_SonarSweep.txt"
 )
 
 Begin {
