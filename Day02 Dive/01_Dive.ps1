@@ -1,9 +1,9 @@
 <#
     .SYNOPSIS
-    AdventOfCode 2021 Day 02 part 2
+    AdventOfCode 2021 Day 02 part 1
 
     .DESCRIPTION
-    We're trying to figure out where the submarine is based on the steering commands provided, now a third parameter "aim" is added.
+    We're trying to figure out where the submarine is based on the steering commands provided.
     The result is the calculated horizontal position multiplied with the depth.
 
     .PARAMETER InputPath
@@ -16,19 +16,18 @@
     The solution is returned as [int]
 
     .EXAMPLE
-    PS> .\submarineAimPosition.ps1
+    PS> .\submarinePosition.ps1
 #>
 
 [CmdletBinding()]
 param (
-    [Parameter()] [System.IO.FileInfo] $payloadFilePath = "./01_SubmarinePayload.txt"
+    [Parameter()] [System.IO.FileInfo] $payloadFilePath = "./01_Dive.txt"
 )
 
 Begin {
     [string[]] $steerings = Get-Content $payloadFilePath
     [int] $horizontal = 0
     [int] $depth = 0
-    [int] $aim = 0
 }
 
 Process {
@@ -37,13 +36,12 @@ Process {
         switch ($steeringInstruction[0]) {
             forward {
                 $horizontal += $steeringInstruction[1]
-                $depth += [int]::Parse($steeringInstruction[1]) * $aim
             }
             down {
-                $aim += $steeringInstruction[1]
+                $depth += $steeringInstruction[1]
             }
             up {
-                $aim -= $steeringInstruction[1]
+                $depth -= $steeringInstruction[1]
             }
         }
     }
