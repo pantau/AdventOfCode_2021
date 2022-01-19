@@ -25,11 +25,30 @@ param (
 
 Begin {
     [string[]] $oxygenBitCriteria = $co2ScrubberBitCriteria = Get-Content -Path $payloadFilePath
+
+    function Get-BitCriteria {
+        param (
+            [Parameter()] [string[]] $array,
+            [Parameter()] [int] $column
+        )
+
+        [int] $positiveValues = 0
+
+        $array | ForEach-Object {
+            $positiveValues += [int]::Parse($_.Substring($column,1))
+
+            if ($positiveValues -ge $array.Length / 2) {
+                $oxygenBitCriteria = $oxygenBitCriteria | Where-Object {
+                    $_.Substring($currentDigit,1) -eq "1"
+                }
+            }
+        }
+    }
 }
 
 Process {
     0..11 | ForEach-Object {
-        [int] $positiveValues = 0
+        
         [int] $currentDigit = $_
 
         $oxygenBitCriteria | ForEach-Object {
